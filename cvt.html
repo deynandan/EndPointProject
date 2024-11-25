@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Convert work hours and minutes into decimalised hours</h1>
+<h1 id="answer"></h1>
+
+Hours<input type="text" id="hrs"  >
+<br>
+<br>
+Minutes<input type="text" id="minutes" >
+<br>
+<br>
+<button onclick="calculate()">Convert</button>
+<br>
+<br>
+Result<input type="text" id="add" NAME="result" value=""/>
+<script>
+
+function calculate() 
+{
+         var field1=document.getElementById("hrs").value;
+         var field2=document.getElementById("minutes").value/60;
+         var result=parseFloat(field1)+parseFloat(field2).toFixed(1);
+         document.getElementById('add').value = result;
+          
+      }
+</script>
+
+</body>
+</html>
