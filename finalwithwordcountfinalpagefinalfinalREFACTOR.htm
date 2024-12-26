@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html class="govuk-template" lang="en-GB">
+<head>
+    <script type="text/javascript" src="module1.js">
+    </script>
+</head>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>DBS Digital Services</title>
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	
+	<link href="https:/dss.chris.r.mil.uk/dss/stylesheets/vendor/bootstrap-datepicker-1.9.0/bootstrap-datepicker.standalone.min.css" rel="stylesheet" >
+	<link href="https:/dss.chris.r.mil.uk/dss/stylesheets/vendor/fontawesome-free-5.3.1-web/css/all.css" media="screen" rel="stylesheet" />
+	<link href="https:/dss.chris.r.mil.uk/common/stylesheets/govuk-frontend-4.4.1.min.css" media="screen" rel="stylesheet" />
+	<link href="https:/dss.chris.r.mil.uk/common/stylesheets/govuk-frontend-4.4.1.overrides.css" media="screen" rel="stylesheet" />
+	<link href="https:/dss.chris.r.mil.uk/common/stylesheets/dbs-frontend-4.4.1.css?v=20221017" rel="stylesheet" type="text/css" />
+
+	<link rel="shortcut icon" href="https:/dss.chris.r.mil.uk/dss/images/favicon.ico" type="image/x-icon" />
+	<link rel="mask-icon" href="https:/dss.chris.r.mil.uk/dss/images/gov.uk_logotype_crown.svg" color="#0b0c0c">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https:/dss.chris.r.mil.uk/dss/images/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https:/dss.chris.r.mil.uk/dss/images/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https:/dss.chris.r.mil.uk/dss/images/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon-precomposed" href="https:/dss.chris.r.mil.uk/dss/images/apple-touch-icon-60x60.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https:/dss.chris.r.mil.uk/dss/stylesheets/vendor/jquery-ui-1.12.1/jquery_ui_1.12.1.css">
+	<link href="https:/dss.chris.r.mil.uk/dss/stylesheets/vendor/prism.css" media="screen" rel="stylesheet">
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/dss_polyfills.js"></script>
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/vendor/jquery-3.6.0.min.js"></script>
+	<!-- script src="https://dss.chris.r.mil.uk/dss/javascripts/vendor/jquery-1.11.1.min.js"></script-->
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/vendor/jquery.validate_1.19.3.min.js" ></script>
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/generate-ref.js" ></script>
+	<script src='https://dss.chris.r.mil.uk/dss/javascripts/vendor/jsPDF090.js'></script>
+	<script src='https://dss.chris.r.mil.uk/dss/javascripts/vendor/dayjs/1.10.4/dayjs.min.js'></script>
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/vendor/dayjs/1.10.4/plugin/customParseFormat.min.js"></script>
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/vendor/dayjs/1.10.4/plugin/utc.min.js"></script>
+	<script>dayjs.extend(window.dayjs_plugin_customParseFormat)</script>
+	<script>dayjs.extend(window.dayjs_plugin_utc)</script>
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/vendor/bootstrap-datepicker-1.9.0/bootstrap-datepicker.min.js"></script>
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/vendor/handlebars.runtime.min-v4.7.7.js" ></script>
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/handlebars_helpers.js"></script>
+
+	<script>document.write("<script src='https://dss.chris.r.mil.uk/dss/javascripts/compiledTemplates.js?v=" + Date.now() + "'><\/script>");</script>
+	<script src='https://dss.chris.r.mil.uk/dss/javascripts/vendor/pdfmake-0.1.33/build/pdfmake.min.js'></script>
+ 	<script src='https://dss.chris.r.mil.uk/dss/javascripts/vendor/pdfmake-0.1.33/build/vfs_fonts.js'></script>
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/dss_application-0.1.0.js"></script>
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/dss_modal_utils.js"></script>
+	<script src="https://dss.chris.r.mil.uk/dss/javascripts/dss_modal_dialogue.js"></script>
+	<script src='https://dss.chris.r.mil.uk/dss/modlogo.js'></script>
+
+<body class="govuk-template__body js-enabled">
+
+	
+	<!-- dss_header_nav1 - one navigation item  -->
+<header class="govuk-header " role="banner" data-module="govuk-header">
+	<div class="govuk-header__container govuk-header__container--full-width">
+		<div class="govuk-header__logo">
+			<a href="https:/dss.chris.r.mil.uk/dss/#" class="govuk-header__link govuk-header__link--homepage">
+				<span class="govuk-header__logotype">
+					<img src="https://dss.chris.r.mil.uk/dss/images/MOD_5115_DIGI_AW_50px_white.png" alt="Ministry of Defence" role="presentation">
+				</span>
+			</a>
+		</div>
+		<div class="govuk-header__content">
+			<a href="https:/dss.chris.r.mil.uk/dss/#" class="govuk-header__link govuk-header__link--service-name">
+				Defence Business Services
+			</a>
+			<nav aria-label="Menu" class="govuk-header__navigation ">
+				<button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide menu" hidden>Menu</button>
+				<ul id="navigation" class="govuk-header__navigation-list" aria-label="Top Level Navigation">
+					<li id="header_current_item"  class="govuk-header__navigation-item govuk-header__navigation-item--active">
+						<a href="https:/dss.chris.r.mil.uk/dss/javascript:void(0);" class="reload">
+							DBS Digital Services						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+<!-- dss_top -->
+<input id="users_staff_number" name = "users_staff_number" type="hidden" value="962247A"/>
+<input id="users_name" name = "users_name" type="hidden" value="Zac Marshall *"/>
+<input id="users_full_name" name = "full_name" type="hidden" value=" Zac Marshall *"/>
+<input id="users_work_email" name = "work_email" type="hidden" value="962247A@ad.mod.uk"/>
+<input id="users_title" name = "users_title" type="hidden" value=""/>
+<input id="users_forenames" name = "users_forenames" type="hidden" value="Zac"/>
+<input id="users_surname" name = "users_surname" type="hidden" value="Marshall *"/>
+<input id="show_announcement" name = "show_announcement" type="hidden" value=""/>
+
+<div class="govuk-!-padding-left-3 govuk-!-padding-right-3" aria-live="off">
+	<div class="govuk-phase-banner">
+		<div class="dbs-navigation-wrapper">
+			<div class="govuk-grid-row">
+				<div class="govuk-grid-column-two-thirds">
+					<div class ="govuk-phase_banner">
+						<p class="govuk-phase-banner__content">
+							<strong class="govuk-tag govuk-phase-banner__content__tag ">
+								beta
+							</strong>
+							<span class="govuk-phase-banner__text">
+								This is a new service – your <a class="govuk-link" href="https:/dss.chris.r.mil.uk/dss/./feedback.php">feedback</a> will help us to improve it.
+							</span>
+						</p>
+					</div>	
+				</div>
+
+				<div class="govuk-grid-column-one-third">
+					<div class ="govuk-phase_banner">
+						<p class="govuk-phase-banner__content dbs-content-right">
+							<strong class="govuk-tag govuk-phase-banner__content__tag dbs-tag-clear">
+								&nbsp;
+							</strong>
+							<span class="govuk-phase-banner__text">
+								Zac Marshall *							</span>
+							<a id="signout-link" href="https:/dss.chris.r.mil.uk/dss/./logout.php"><i class="fa fa-sign-out-alt"></i>Sign out</a>							
+						</p>
+					</div>	
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		<main class="govuk-main-wrapper govuk-width-container" id="main-content">
+			<input id="staff_number" name = "staff_number" type="hidden" value="962247A"/>
+			<input id="users_name" name = "users_name" type="hidden" value="Zac Marshall *"/>
+			<input id="full_name" name = "full_name" type="hidden" value=" Zac Marshall *"/>
+			<input id="work_email" name = "work_email" type="hidden" value="962247A@ad.mod.uk"/>
+			<div id ="breadcrumbs" class="govuk-breadcrumbs" style="display:none">
+				<ol class="govuk-breadcrumbs__list">
+					<li class="govuk-breadcrumbs__list-item" aria-current="page" id="breadcrumb_link"><a class="govuk-breadcrumbs__link" href="https:/dss.chris.r.mil.uk/dss/./index.php">Home</a></li>
+				</ol>
+			</div>
+			
+			<div class="govuk-grid-row">
+					
+				<div class="govuk-grid-column-three-quarters">
+					<div class="dbs-page-header">
+						<h1 class="govuk-heading-l">
+							Welcome to DBS Digital Services
+							<span id="section_progress" class="dbs-section-progress"><!-- content added by js --></span>
+						</h1>
+						<div class="govuk-body">Employee's self-nomination form for In Year Reward/Special Bonus Scheme</div>
+                                                <id="subtitle" >
+					</div>
+				</div>
+
+				<div class="govuk-grid-column-one-quarter">
+					<p class="dbs-contact">
+						<a class="govuk-body" target="_blank" href="https:/dss.chris.r.mil.uk/dss/./feedback.php">Give feedback on this page</a>
+					</p>
+				</div>
+				
+			</div>
+			<div class="govuk-grid-row">
+
+				<div class="govuk-grid-column-full">
+				
+				    <div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1" style="display: none;">
+
+						<h2 class="govuk-heading-m error-summary-heading" id="error-summary-heading">
+							** Message set by jquery **
+						</h2>
+					  
+					</div>
+
+    <style>
+       
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        
+       .input,
+       text  
+
+
+        input,
+        textarea {
+   		
+            width: 98%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            overflow: auto;
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button.prev {
+            background-color: #f1f1f1;
+            float: left;
+            margin-left: 62%;
+        }
+
+        button.next {
+            background-color: #4CAF50;
+            color: white;
+            float: left;
+        }
+
+        button[type="submit"] {
+            
+            color: white;
+            float: right;
+        }
+
+
+}
+    .autocomplete-items {
+  position: relative;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}       
+         
+ </style>
+</head>
+
+<body>
+    <form id="multiStepForm">
+        <div class="step active">
+         
+	  
+	<!--Make sure the form has the autocomplete function switched off:-->
+          <form autocomplete="off" action="/action_page.php">  
+	 
+            <center>
+
+            <label class="govuk-label" for="width-10" label for="staffNumber">
+              
+              Staff number
+              </label>
+           <div>
+            <input type="text" input class="govuk-input govuk-input--width-10" name="array[]" value="" id="staff-number" minlength="7" maxlength="7" required pattern="[0-9a-zA-Z]*">
+	   </div>
+	    <label class="govuk-label" for="width-10" label for="firstName"   >   
+ 	                 First Name
+              </label>
+	    <div>
+            <input type="text" input class="govuk-input govuk-input--width-10" id="first-name" name="array[]" required pattern="[a-zA-Z]*">
+	    </div>
+            <label class="govuk-label" for="width-10" label for="lastName">
+            
+              Last Name
+              </label>
+	    <div>
+            <input type="text" input class="govuk-input govuk-input--width-10" id="last-name" name="array[]" required pattern="[a-zA-Z]*">
+	    </div>
+            <label class="govuk-label" for="sort">
+            
+    Department
+  </label>
+  <select class="govuk-select" id="sort" name="array[]">
+    <option value="DIT Helpdesk" >DIT Helpdesk</option>
+    <option value="DIT Automation" >DIT Automation</option>
+    <option value="DIT Testing" selected>DIT Testing</option>
+    <span class="selection">
+  </select>  
+  	</div>
+          </center>
+        <div class="step">
+        
+           <center>
+     
+         <label class="govuk-label" for="width-10" label for="linemanagerstaffNumber">
+            Line Manager Staff number
+            </label>
+	    <div>
+            <input class="govuk-input govuk-input--width-10" id="lmstaff-number" name="array[]" value="" minlength="7" maxlength="7" required pattern="[0-9a-zA-Z]*">
+	    </div>
+            <label class="govuk-label" for="width-10" label for="lmFirstname">
+            Line Manager First name
+              </label>
+	    <div>
+            <input class="govuk-input govuk-input--width-10" id="lmfirst-name" name="array[]" required pattern="[a-zA-Z]*">
+	    </div>
+            <label class="govuk-label" for="width-10" label for="lmLastname">
+	    Line Manager Last name
+	    </label>
+	    <div>
+     	    <input class="govuk-input govuk-input--width-10" id="lmlast-name" name="array[]" required pattern="[a-zA-Z]*">
+	    </div>
+	<label class="govuk-label" for="sort">
+      Award
+    </label>
+    <select class="govuk-select" id="sort" name="array[]">
+       <option value="In Year Reward">In Year Reward</option>
+       <option value="Special Bonus Scheme" selected>Special Bonus Scheme</option>
+       <span class="selection">
+    </select>
+ 	  </div>
+           </center>
+  
+<div>
+ <div class="step"
+</div)       
+  
+         <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxwords="250">
+                 
+
+         
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="with-hint">
+      Supporting Statement
+    </label>
+  </h1>
+  <div id="with-hint-hint" class="govuk-hint">
+    Do not include personal or financial information like your National Insurance number or credit card details
+  </div>
+  <p id="nationality-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> You must write a statement, otherwise your application may NOT be considered
+    </p>
+  <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="array[]" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+  <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+
+   </div>
+
+
+
+   
+ 
+ </div>   		
+        <div class="button-container">
+            <button type="button" 
+                    class="prev">
+              Previous
+              </button>
+            <button type="button" class="govuk-button" data-module="govuk-button" >
+              Next
+              </button>
+	     <div class="govuk-button-group">
+            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" onclick="Submit()">
+              Submit
+              </button>
+        </div>
+    </form>
+
+<script type="text/javascript">
+        let k = "";
+        function Submit() {
+             let input = document.getElementsByName('array[]');
+
+             for (let i = 0; i < input.length; i++) {
+                let a = input[i];
+                k = k + a.value + ":";
+	    	
+            
+             }
+
+           //document.getElementById("par").innerHTML = k;
+           //document.getElementById("po").innerHTML = "Output";
+
+ 	   let myArray = k;
+	   let b = myArray.split(":");
+		
+           let data = b ;		
+	   
+	   
+   
+	  
+	   
+	  //  const element = document.getElementById("multiStepForm");
+	  //  element.remove();
+           
+	   // document.getElementById(id="section_progress").innerHTML = "Form now submitted!!!";
+           document.getElementById(id="multiStepForm").outerHTML = "<h1>Supporting Statement form for Reward has now been submitted !!!!</h1>";
+	   
+           let jsonString = JSON.stringify(data);
+
+
+
+
+           	
+ 	   let ingest = ("Employee Staff Number:" + data[0] + ", " + "Employee First Name:" + data[1] + ", " + "Employee Last Name:" + data[2] + ", " + "Department: " + data[3] + ", " + "Line Manager Staff Number:" + data[4] + ", " + "Line Manager First Name:" + data[5] + ", " + "Line Manager Last Name:" + data[6] + ", " + "Award: "  + data[7] + ", " + "Supporting Statement: " + data[8] );
+
+           //  document.write("Employee Staff Number:" + data[0] + " " + "Employee First Name:" + data[1] + " " + "Employee Last Name:" + data[2] + " " +  "Line Manager Staff Number:" + data[3] + " " + "Line Manager First Name:" + data[4] + " " + "Line Manager Last Name:" + data[5] + " " + "Award"  + data[6] + " " + "Supporting Statement" + data[7] + " "  );
+	   // document.write(k);
+
+	    const textToBLOB = new Blob([ingest], { type: "text/plain" });
+            //var filename = new Date();
+            
+            
+            // const FileName = filename; // The file to save the data.
+
+            let newLink = document.createElement("a");
+            newLink.download = "NDFiletoingest.txt";
+
+            if (window.webkitURL != null) {
+                newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+            } else {
+                newLink.href = window.URL.createObjectURL(textToBLOB);
+                newLink.style.display = "none";
+                document.body.appendChild(newLink);
+            }
+
+            newLink.click();
+  
+	   // saveStrings(data, 'saved.txt');
+                             
+           // document.write("Supporting Statement form for Reward has now been submitted !!!!"); 
+	     
+	   // location.replace("C:/Users/deyn100/Desktop/Apprenticeship/Project/finalphase/PROJECTwithCSSstylePage4withgovwebcascade.htm");
+          }
+    </script>
+
+   
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('multiStepForm');
+            const steps = form.querySelectorAll('.step');
+            const prevButton = form.querySelector('.prev');
+            const nextButton = form.querySelector('.govuk-button');
+            let currentStep = 0;
+
+            updateButtons();
+
+            nextButton.addEventListener('click', () => {
+                if (validateForm()) {
+                    steps[currentStep].classList
+                                        .remove('active');
+                    currentStep++;
+                    steps[currentStep].classList
+                                        .add('active');
+                    updateButtons();
+                }
+            });
+
+            prevButton.addEventListener('click', () => {
+                steps[currentStep].classList
+                                    .remove('active');
+                currentStep--;
+                steps[currentStep].classList
+                                    .add('active');
+                updateButtons();
+            });
+
+            form.addEventListener('submit', (event) => {
+                if (!validateForm()) {
+                    event.preventDefault();
+                }
+            });
+
+            function validateForm() {
+                const currentInputs = steps[currentStep]
+                    .querySelectorAll('input, textarea');
+                let valid = true;
+                currentInputs.forEach(input => {
+                    if (!input.checkValidity()) {
+                        input.reportValidity();
+                        valid = false;
+                    }
+                });
+                return valid;
+            }
+
+            function updateButtons() {
+                if (currentStep === 0) {
+                    prevButton.style.display = 'none';
+                } else {
+                    prevButton.style.display = 'inline-block';
+                }
+
+                if (currentStep === steps.length - 1) {
+                    nextButton.style.display = 'none';
+                    form.querySelector('button[type="submit"]')
+                          .style.display = 'inline-block';
+                } else {
+                    nextButton.style.display = 'inline-block';
+                    form.querySelector('button[type="submit"]')
+                          .style.display = 'none';
+                }
+            }
+        });
+    </script>
+
+<script>
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+/*An array containing staffdetails:*/
+
+
+var staffnumbers = [staffdetails.staffno];
+var firstnames = [staffdetails.firstname];
+var lastnames = [staffdetails.lastname];
+var lmstaffnumbers = [staffdetails.lmstaffno];
+var lmfirstnames = [staffdetails.lmfirstname];
+var lmlastnames = [staffdetails.lmlastname];
+
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("staff-number"), staffnumbers);
+autocomplete(document.getElementById("first-name"), firstnames);
+autocomplete(document.getElementById("last-name"), lastnames);
+autocomplete(document.getElementById("lmstaff-number"), lmstaffnumbers);
+autocomplete(document.getElementById("lmfirst-name"), lmfirstnames);
+autocomplete(document.getElementById("lmlast-name"), lmlastnames);
+</script>
+ </form>
+								</div>
+	
+							
+								
+							</div>
+
+						</div>
+					</form>
+				</div>
+			</div>
+			</div>
+			<!-- IDAM SURVEY 
+			<div class="govuk-grid-row">
+						</div>
+			-->
+		</main>
+		<!-- end of inserted code -->
+	
+	<div id="global-app-error" class="app-error hidden"></div>
+	
+<footer class="govuk-footer dbs-footer" id="footer">
+	<div class="govuk-width-container ">
+		<div class="govuk-footer__meta">
+			<div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+				<ul class="govuk-footer__inline-list">
+					<li class="govuk-footer__inline-list-item">
+						<a class="govuk-footer__link" href="https:/dss.chris.r.mil.uk/dss/accessibility.php">
+							Accessibility
+						</a>
+					</li>
+					<li class="govuk-footer__inline-list-item">
+						<a class="govuk-footer__link" href="https:/dss.chris.r.mil.uk/dss/help.php">
+							Help
+						</a>
+					</li>
+
+					<li class="govuk-footer__inline-list-item">
+						<a class="govuk-footer__link" href="https:/dss.chris.r.mil.uk/dss/cookies.php">
+							Cookies
+						</a>
+					</li>
+					<li class="govuk-footer__inline-list-item">
+						<a class="govuk-footer__link" href="https:/dss.chris.r.mil.uk/dss/tsandcs.php">
+							Terms and conditions
+						</a>
+					</li>
+
+				</ul>
+				
+				<ul class="govuk-footer__inline-list">
+					<li class="govuk-footer__inline-list-item">
+						Built by <a class="govuk-footer__link" href="https:/dss.chris.r.mil.uk/dss/https:/modgovuk.sharepoint.com/sites/defnet/HOCS/Pages/Defence%20Business%20Services.aspx">Defence Business Services</a> 
+					</li>
+					<li class="govuk-footer__inline-list-item">
+						<div id = "release_number"></div>
+					</li>
+				</ul>
+
+				<svg
+				role="presentation"
+				focusable="false"
+				class="govuk-footer__licence-logo"
+				xmlns="http:/www.w3.org/2000/svg"
+				viewbox="0 0 483.2 195.7"
+				height="17"
+				width="41"
+				>
+				<path
+				fill="currentColor"
+				d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+				>
+				</path>
+				</svg>
+				<span class="govuk-footer__licence-description">
+					All content is available under the
+					<a
+					class="govuk-footer__link"
+					href="https:/dss.chris.r.mil.uk/dss/https:/www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+					rel="license"
+					>Open Government Licence v3.0</a>, except where otherwise stated
+				</span>
+			</div>
+			<div class="govuk-footer__meta-item">
+				<a
+				  class="govuk-footer__link govuk-footer__copyright-logo"
+				  href="https:/dss.chris.r.mil.uk/dss/https:/www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+				>© Crown copyright</a>
+			</div>
+		</div>
+    </div>
+	<div>
+		<input id="max_upload_size_bytes" type="hidden"  name = "max_upload_size_bytes" value="6M"/>
+		<input id="max_upload_size_text" type="hidden"  name = "max_upload_size_text" value="6M"/>
+	</div>
+</footer>
+<div id="dialog_layer" class="">
+
+	<div id = "dialogTimeOut" role="dialog" aria-labelledby="dialogTimeOut_label"
+      aria-describedby="dialogTimeOut_desc" class="dbs-hidden"
+      aria-modal="true">
+		
+		<div class="dbs-modal-dialogue__header">
+		 <svg
+			role="presentation"
+			focusable="false"
+			class="dbs-modal-dialogue__crown"
+			xmlns="http:/www.w3.org/2000/svg"
+			viewbox="0 0 132 97"
+			height="30"
+			width="36"
+			>
+			<path
+			   fill="currentColor" fill-rule="evenodd"
+			   d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"
+			   ></path>
+		 </svg>
+		 <button type="button" class="govuk-button dbs-modal-dialogue__close" onclick="closeDialog(this)" aria-label="Close modal dialogue">
+		  &times;
+		 </button>
+		</div>
+		
+	</div>   
+
+
+
+</div>   
+
+<!--End Show Session Expire Warning Popup here -->
+<script src="https://dss.chris.r.mil.uk/common/javascripts/govuk-frontend-4.4.1.min.js"></script>
+<script>window.GOVUKFrontend.initAll()</script>
+
+
+</body>
+
+</body>
+
+</html>
